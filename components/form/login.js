@@ -36,7 +36,7 @@ export default function Login() {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <Box height='100vh' display='flex' justifyContent='center' alignItems='center' color='black'>
-                <Flex bg='gray.700' width={{ base: '20rem', md: '40rem' }} rounded='xl' p='5' >
+                <Flex bg='#52796f' width={{ base: '20rem', md: '40rem' }} rounded='xl' p='5' >
                     {/* side 1 */}
                     <Box width='50%' mx='4' display={{ base: 'none', md: 'block' }}  >
                         <Box display='flex' flexDirection='column' height='100%' justifyContent='center' alignItems='center' color='white'><SiPhpmyadmin size={120} />
@@ -47,7 +47,7 @@ export default function Login() {
                     {/* side 2 */}
                     <FormControl isInvalid={errors.name} display='flex' flexDirection='column' justifyContent='center' gap='5' alignItems='center' width={{ base: "full", md: '50%' }} mt='6'>
                         <Flex justifyContent='center'>
-                            <Box color='white'><MdOutlineFingerprint size={40} /></Box>
+                            <Box color='white' _hover={{ color: '#e3d0d8' }}><MdOutlineFingerprint size={40} /></Box>
                         </Flex>
                         {/* username inpute */}
                         <Flex direction='column' gap='1'>
@@ -97,12 +97,12 @@ export default function Login() {
                             </Button>
                         </Flex>
                         <Flex justifyContent='center' alignItems='center'>
-                            <Text cursor='pointer' fontSize='11px' alignSelf='center' color='white' textDecoration='underline'>Our Terms and Privacy</Text>
+                            <Text cursor='pointer' fontSize='11px' alignSelf='center' color='white' textDecoration='underline' _hover={{ color: '#e3d0d8' }}>Our Terms and Privacy</Text>
                         </Flex>
                         <Flex justifyContent='center' mr={{ base: '0', md: '19rem' }} gap='5' mt='0.5rem'>
-                            <Box color='white' cursor='pointer'><FaLinkedin size={22} /></Box>
-                            <Box color='white' cursor='pointer'><BsGithub size={22} /></Box>
-                            <Box color='white' cursor='pointer'><AiTwotoneMail size={22} /></Box>
+                            <Box color='white' cursor='pointer' _hover={{ color: '#e3d0d8' }}><FaLinkedin size={22} /></Box>
+                            <Box color='white' cursor='pointer' _hover={{ color: '#e3d0d8' }}><BsGithub size={22} /></Box>
+                            <Box color='white' cursor='pointer' _hover={{ color: '#e3d0d8' }}><AiTwotoneMail size={22} /></Box>
                         </Flex>
                     </FormControl>
                 </Flex>
