@@ -1,0 +1,67 @@
+import { useState } from "react";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
+import { useDisclosure } from "@chakra-ui/react";
+// icons
+import { FaBars } from 'react-icons/fa'
+import { MdOutlineExitToApp } from 'react-icons/md'
+import { SiPhpmyadmin } from 'react-icons/si'
+import { HiOutlineXMark } from 'react-icons/hi2'
+import { BsClipboardData, BsCreditCard } from 'react-icons/bs'
+import { AiOutlineUser, AiOutlineBarChart } from 'react-icons/ai'
+
+// d90429
+export default function Nav() {
+    const [click, setClick] = useState(false)
+    const { isOpen, onToggle } = useDisclosure()
+    const CloseFunc = () => {
+        setClick(!click)
+        onToggle()
+    }
+    return (
+        <>
+            <Box   >
+                <Flex height='3.5rem' bg='#52796f' justifyContent='space-around' alignItems='center' >
+                    <Flex p=''>
+                        <Box color='white' cursor='pointer' ><SiPhpmyadmin size={50} /></Box>
+                    </Flex>
+                    <Flex display={{ base: 'none', lg: 'flex' }} justifyContent='space-evenly' w='55%'>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' borderLeft='1px' borderRight='1px'>User information</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' borderLeft='1px' borderRight='1px'>Cards</Text>
+                        {/* <Text color='white' _hover={{ color: 'green.700' }}>logo</Text> */}
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' borderLeft='1px' borderRight='1px'>List of users</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' borderLeft='1px' borderRight='1px'>User Data with cards</Text>
+                    </Flex>
+                    <Flex>
+                        <Box display={{ base: 'none', lg: 'flex' }} cursor='pointer' color='white' _hover={{ color: '#e63946' }}   ><MdOutlineExitToApp size={25} /></Box>
+                        <Box display={{ base: 'flex', lg: 'none' }} cursor='pointer' _hover={{ color: '#e3d0d8' }} color='white'>
+                            {!click ? <FaBars size={25} onClick={() => CloseFunc()} /> : <HiOutlineXMark size={25} onClick={() => CloseFunc()} />}
+                        </Box>
+                    </Flex>
+                </Flex>
+            </Box>
+            <ScaleFade initialScale={1} in={isOpen} gap='6'>
+                <Flex pos='fixed' flexDir='column' gap='6' left={click ? '0' : '-100%'} top='0' w='50%' bg='#354F52' height='full' p='5'>
+
+                    <Box display='flex' alignItems='center' fontWeight='bold' color='#CAD2C5' >
+                        <Box cursor='pointer'><SiPhpmyadmin size={60} /></Box>
+                        <Text ml='2' fontWeight='bold' color='white' fontSize='1rem' cursor='pointer'>It's easy with us</Text>
+                    </Box>
+                    <Flex flexDir='column' justifyContent='center' gap='2'>
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsClipboardData size={25} /><Text pl='2' cursor='pointer'>User information</Text></Box>
+                        {/*  */}
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsCreditCard size={25} /><Text pl='2' cursor='pointer'>Cards</Text></Box>
+                        {/*  */}
+                        <Box borderBottom='1px' pb='2.5' display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e3d0d8' }} fontWeight='bold' color='white' w='80%' ><AiOutlineUser size={25} /><Text pl='2' >List of users</Text></Box>
+                        {/*  */}
+                        <Box borderBottom='1px' pb='2.5' display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e3d0d8' }} fontWeight='bold' color='white' w='80%' ><AiOutlineBarChart size={25} /><Text pl='2' cursor='pointer'>User Data with cards</Text></Box>
+                        {/*  */}
+                        <Box display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e63946' }} fontWeight='bold' color='white' w='80%' ><MdOutlineExitToApp size={25} /><Text pl='2' cursor='pointer'>Exit</Text></Box>
+                    </Flex>
+
+                </Flex>
+            </ScaleFade>
+
+        </>
+    )
+}
