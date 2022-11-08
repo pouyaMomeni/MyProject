@@ -10,6 +10,7 @@ import { HiOutlineXMark } from 'react-icons/hi2'
 import { BsClipboardData, BsCreditCard } from 'react-icons/bs'
 import { AiOutlineUser, AiOutlineBarChart } from 'react-icons/ai'
 import Mode from "components/button/mode";
+import Locale from "components/button/language";
 
 // d90429
 export default function Nav() {
@@ -34,6 +35,7 @@ export default function Nav() {
                         <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User Data with cards</Text>
                     </Flex>
                     <Flex justifyContent='center' width='10%' gap='2' alignItems='center'>
+                        <Box display='flex'><Locale /></Box>
                         <Box p='2'  ><Mode /></Box>
                         <Box display={{ base: 'none', lg: 'flex' }} cursor='pointer' color='white' _hover={{ color: '#e63946' }}   ><MdOutlineExitToApp size={25} /></Box>
                         <Box alignContent='center' display={{ base: 'flex', lg: 'none' }} cursor='pointer' _hover={{ color: '#e3d0d8' }} color='white'>
@@ -47,8 +49,8 @@ export default function Nav() {
                 <Flex pos='fixed' flexDir='column' gap='6' left={click ? '0' : '-100%'} top='0' w='50%' bg='#354F52' height='full' p='5'>
 
                     <Box display='flex' alignItems='center' fontWeight='bold' color='#CAD2C5' >
-                        <Box cursor='pointer'><SiPhpmyadmin size={60} /></Box>
-                        <Text ml='2' fontWeight='bold' color='white' fontSize='1rem' cursor='pointer'>It's easy with us</Text>
+                        <Box w='50%'><Text ml='2' fontWeight='bold' color='white' fontSize='1.2rem' cursor='pointer'>It's easy with us</Text></Box>
+                        <Box w='50%' ><Text cursor='pointer' onClick={() => CloseFunc()} _hover={{ color: '#e3d0d8' }} display='flex' justifyContent='center'><HiOutlineXMark /></Text></Box>
                     </Box>
                     <Flex flexDir='column' justifyContent='center' gap='4'>
                         <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsClipboardData size={25} /><Text pl='2' cursor='pointer'>User information</Text></Box>

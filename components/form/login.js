@@ -15,8 +15,12 @@ import { BsGithub } from 'react-icons/bs'
 import { AiTwotoneMail } from 'react-icons/ai'
 import { SiPhpmyadmin } from 'react-icons/si'
 import Mode from 'components/button/mode'
+// i18next
+import { useTranslation } from 'next-i18next';
+
 
 export default function Login() {
+    const { t } = useTranslation();
     const {
         handleSubmit,
         register,
