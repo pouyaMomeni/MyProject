@@ -1,3 +1,5 @@
+import Footer from 'components/ui/footer'
+import Nav from 'components/ui/nav'
 import Head from 'next/head'
 export default function Home() {
   return (

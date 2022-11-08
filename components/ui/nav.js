@@ -25,12 +25,12 @@ export default function Nav() {
                     <Flex p=''>
                         <Box color='white' cursor='pointer' ><SiPhpmyadmin size={50} /></Box>
                     </Flex>
-                    <Flex display={{ base: 'none', lg: 'flex' }} justifyContent='space-evenly' w='55%'>
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' borderLeft='1px' borderRight='1px'>User information</Text>
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' borderLeft='1px' borderRight='1px'>Cards</Text>
+                    <Flex display={{ base: 'none', lg: 'flex' }} justifyContent='space-evenly' >
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User information</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >Cards</Text>
                         {/* <Text color='white' _hover={{ color: 'green.700' }}>logo</Text> */}
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' borderLeft='1px' borderRight='1px'>List of users</Text>
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' borderLeft='1px' borderRight='1px'>User Data with cards</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >List of users</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User Data with cards</Text>
                     </Flex>
                     <Flex>
                         <Box display={{ base: 'none', lg: 'flex' }} cursor='pointer' color='white' _hover={{ color: '#e63946' }}   ><MdOutlineExitToApp size={25} /></Box>
@@ -47,7 +47,7 @@ export default function Nav() {
                         <Box cursor='pointer'><SiPhpmyadmin size={60} /></Box>
                         <Text ml='2' fontWeight='bold' color='white' fontSize='1rem' cursor='pointer'>It's easy with us</Text>
                     </Box>
-                    <Flex flexDir='column' justifyContent='center' gap='2'>
+                    <Flex flexDir='column' justifyContent='center' gap='4'>
                         <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsClipboardData size={25} /><Text pl='2' cursor='pointer'>User information</Text></Box>
                         {/*  */}
                         <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsCreditCard size={25} /><Text pl='2' cursor='pointer'>Cards</Text></Box>

@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Roboto-Medium;
+    src: url('/my-app/public/static/font/Roboto-Medium.ttf');
+}
+
+* {
+    font-family: Roboto-Medium;
+}
