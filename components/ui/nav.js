@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
-import { useDisclosure } from "@chakra-ui/react";
+import { useDisclosure, useColorMode } from "@chakra-ui/react";
 // icons
 import { FaBars } from 'react-icons/fa'
 import { MdOutlineExitToApp } from 'react-icons/md'
@@ -9,6 +9,7 @@ import { SiPhpmyadmin } from 'react-icons/si'
 import { HiOutlineXMark } from 'react-icons/hi2'
 import { BsClipboardData, BsCreditCard } from 'react-icons/bs'
 import { AiOutlineUser, AiOutlineBarChart } from 'react-icons/ai'
+import Mode from "components/button/mode";
 
 // d90429
 export default function Nav() {
@@ -32,9 +33,11 @@ export default function Nav() {
                         <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >List of users</Text>
                         <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User Data with cards</Text>
                     </Flex>
-                    <Flex>
+                    <Flex justifyContent='center' width='10%' gap='2' alignItems='center'>
+                        <Box p='2'  ><Mode /></Box>
                         <Box display={{ base: 'none', lg: 'flex' }} cursor='pointer' color='white' _hover={{ color: '#e63946' }}   ><MdOutlineExitToApp size={25} /></Box>
-                        <Box display={{ base: 'flex', lg: 'none' }} cursor='pointer' _hover={{ color: '#e3d0d8' }} color='white'>
+                        <Box alignContent='center' display={{ base: 'flex', lg: 'none' }} cursor='pointer' _hover={{ color: '#e3d0d8' }} color='white'>
+
                             {!click ? <FaBars size={25} onClick={() => CloseFunc()} /> : <HiOutlineXMark size={25} onClick={() => CloseFunc()} />}
                         </Box>
                     </Flex>
