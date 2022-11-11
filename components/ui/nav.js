@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
 import { useDisclosure, useColorMode } from "@chakra-ui/react";
+import { useTranslation } from 'next-i18next';
 // icons
 import { FaBars } from 'react-icons/fa'
 import { MdOutlineExitToApp } from 'react-icons/md'
@@ -11,14 +12,24 @@ import { BsClipboardData, BsCreditCard } from 'react-icons/bs'
 import { AiOutlineUser, AiOutlineBarChart } from 'react-icons/ai'
 import Mode from "components/button/mode";
 import Locale from "components/button/language";
-
+import { useRouter } from "next/router"
+import { logOut } from "pages/api/_index";
 // d90429
 export default function Nav() {
+    const { t } = useTranslation();
+    const router = useRouter()
     const [click, setClick] = useState(false)
     const { isOpen, onToggle } = useDisclosure()
     const CloseFunc = () => {
         setClick(!click)
         onToggle()
+    }
+    const exitFunc = async () => {
+        const user = await logOut()
+        if (user.status === 200) {
+            console.log('logouttt', user);
+            router.push('/')
+        }
     }
     return (
         <>
@@ -37,7 +48,7 @@ export default function Nav() {
                     <Flex justifyContent='center' width='10%' gap='2' alignItems='center'>
                         <Box display='flex'><Locale /></Box>
                         <Box p='2'  ><Mode /></Box>
-                        <Box display={{ base: 'none', lg: 'flex' }} cursor='pointer' color='white' _hover={{ color: '#e63946' }}   ><MdOutlineExitToApp size={25} /></Box>
+                        <Box display={{ base: 'none', lg: 'flex' }} cursor='pointer' color='white' _hover={{ color: '#e63946' }}   ><MdOutlineExitToApp size={25} onClick={() => exitFunc()} /></Box>
                         <Box alignContent='center' display={{ base: 'flex', lg: 'none' }} cursor='pointer' _hover={{ color: '#e3d0d8' }} color='white'>
 
                             {!click ? <FaBars size={25} onClick={() => CloseFunc()} /> : <HiOutlineXMark size={25} onClick={() => CloseFunc()} />}
@@ -61,7 +72,7 @@ export default function Nav() {
                         {/*  */}
                         <Box borderBottom='1px' pb='2.5' display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e3d0d8' }} fontWeight='bold' color='white' w='80%' ><AiOutlineBarChart size={25} /><Text pl='2' cursor='pointer'>User Data with cards</Text></Box>
                         {/*  */}
-                        <Box display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e63946' }} fontWeight='bold' color='white' w='80%' ><MdOutlineExitToApp size={25} /><Text pl='2' cursor='pointer'>Exit</Text></Box>
+                        <Box display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e63946' }} fontWeight='bold' color='white' w='80%' ><MdOutlineExitToApp size={25} /><Text onClick={() => exitFunc()} pl='2' cursor='pointer'>Exit</Text></Box>
                     </Flex>
 
                 </Flex>

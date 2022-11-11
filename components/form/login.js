@@ -17,18 +17,26 @@ import { SiPhpmyadmin } from 'react-icons/si'
 import Mode from 'components/button/mode'
 // i18next
 import { useTranslation } from 'next-i18next';
-
+import { useRouter } from 'next/router'
+import { login } from 'pages/api/_index'
+import Cookies from 'js-cookie'
 
 export default function Login() {
+    const router = useRouter();
     const { t } = useTranslation();
     const {
         handleSubmit,
         register,
         formState: { errors, isSubmitting },
     } = useForm()
-    // values of form
-    function onSubmit(values) {
-        console.log(values);
+    async function onSubmit(values) {
+        const user = await login(values)
+        if (user.status === 200) {
+            Cookies.set('Authorization', user.data.Data.Token)
+            console.log(" login ", user);
+            router.push('/main')
+        }
+
     }
 
     return (
@@ -55,17 +63,17 @@ export default function Login() {
                                     autoComplete='off'
                                     py='5'
                                     textAlign='center'
-                                    id='name'
-                                    placeholder='Username'
+                                    id='number'
+                                    placeholder='number'
                                     color='white'
                                     focusBorderColor='white'
-                                    {...register('name', {
+                                    {...register('number', {
                                         required: 'This is required',
-                                        minLength: { value: 4, message: 'Minimum length should be 4' },
+                                        minLength: { value: 10, message: 'Minimum length should be 10' },
                                     })}
                                 />
                                 <FormErrorMessage>
-                                    {errors.name && errors.name.message}
+                                    {errors.number && errors.number.message}
                                 </FormErrorMessage>
                             </Flex>
                             {/* username inpute */}
