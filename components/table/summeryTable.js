@@ -5,7 +5,6 @@ import { RiProfileLine } from 'react-icons/ri'
 import { useSummary } from 'hook'
 export default function Summary() {
     const { data } = useSummary()
-    console.log(data.data.Data.Username);
     return (
         <Flex flexDir='column' p='10' border='1px'>
             <Flex w='full' justifyContent='center' borderBottom='1px'>

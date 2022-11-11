@@ -20,9 +20,18 @@ const summaryReq = async () => {
     })
     return res
 }
+const fullReq = async () => {
+    const res = await axios.get('https://api.exgain.ir/wallet/api/v1/User/My', {
+        headers: {
+            Authorization: Cookies.get('Authorization')
+        }
+    })
+    return res
+}
 
 export {
     login,
     logOut,
-    summaryReq
+    summaryReq,
+    fullReq
 }

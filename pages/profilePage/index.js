@@ -1,4 +1,4 @@
-import Summary from "components/table/summeryTable";
+import Full from "components/table/fullTable";
 import Footer from "components/ui/footer"
 import Nav from "components/ui/nav"
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -11,14 +11,14 @@ export async function getStaticProps({ locale }) {
     }
 }
 
-const SummaryPage = () => {
+const Profile = () => {
     return (
         <>
             <Nav />
-            <Summary />
+            <Full />
             <Footer />
         </>
     )
 }
 
-export default SummaryPage
+export default Profile

@@ -2,19 +2,21 @@ import { Flex, Box, Text, Input } from '@chakra-ui/react'
 import { CgProfile } from 'react-icons/cg'
 import { AiOutlineWarning } from 'react-icons/ai'
 import { RiProfileLine } from 'react-icons/ri'
-export default function Summary() {
+import { useFull } from 'hook'
+export default function Full() {
+    const { data } = useFull()
     return (
         <Flex flexDir='column' p='10' border='1px'>
             <Flex w='full' justifyContent='center' borderBottom='1px'>
                 <Box display='flex' p='5' justifyContent='center' w='30%'><CgProfile size={90} /></Box>
-                <Text fontWeight='bold' w='70%' display='flex' alignItems='center' gap='2' ><AiOutlineWarning size={25} />You can see your brief Information about your acount</Text>
+                <Text fontWeight='bold' w='70%' display='flex' alignItems='center' gap='2' ><AiOutlineWarning size={25} />You can see your Full Information about your acount</Text>
             </Flex>
             <Flex flexDir='column' gap='5' padding='5'>
                 {/* row 1 */}
                 <Flex w='full' gap='5' flexDirection={{ base: 'column', lg: 'row' }}>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
                         <Text display='flex' justifyContent='center' w='20%'>ID :</Text>
-                        <Input value={data?.data.Data.UserID} w='80%' disabled />
+                        <Input value={data?.data.Data.Id} w='80%' disabled />
                     </Box>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
                         <Text display='flex' justifyContent='center' w='20%'>Username :</Text>
@@ -25,7 +27,7 @@ export default function Summary() {
                 <Flex w='full' gap='5' flexDirection={{ base: 'column', lg: 'row' }}>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
                         <Text display='flex' justifyContent='center' w='20%'>Mobile :</Text>
-                        <Input value={data?.data.Data.Mobile} w='80%' disabled />
+                        <Input value={data?.data.Data.MobileNumber} w='80%' disabled />
                     </Box>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
                         <Text display='flex' justifyContent='center' w='20%'>FirstName :</Text>
@@ -39,25 +41,25 @@ export default function Summary() {
                         <Input value={data?.data.Data.LastName} w='80%' disabled />
                     </Box>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
-                        <Text display='flex' justifyContent='center' w='20%'>Email :</Text>
+                        <Text display='flex' justifyContent='center' w='20%'>Father name :</Text>
                         <Input value={data?.data.Data.FatherName} w='80%' disabled />
                     </Box>
                 </Flex>
                 {/* row 4 */}
                 <Flex w='full' gap='5' flexDirection={{ base: 'column', lg: 'row' }}>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
-                        <Text display='flex' justifyContent='center' w='20%'>LastName :</Text>
+                        <Text display='flex' justifyContent='center' w='20%'>Gender :</Text>
                         <Input value={data?.data.Data.Gender} w='80%' disabled />
                     </Box>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
-                        <Text display='flex' justifyContent='center' w='20%'>Email :</Text>
+                        <Text display='flex' justifyContent='center' w='20%'>Birthday :</Text>
                         <Input value={data?.data.Data.BirthDate} w='80%' disabled />
                     </Box>
                 </Flex>
                 {/* row 5 */}
                 <Flex w='full' gap='5' flexDirection={{ base: 'column', lg: 'row' }}>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
-                        <Text display='flex' justifyContent='center' w='20%'>LastName :</Text>
+                        <Text display='flex' justifyContent='center' w='20%'>Address :</Text>
                         <Input value={data?.data.Data.Address} w='80%' disabled />
                     </Box>
                     <Box display='flex' alignItems='center' gap='2' w={{ base: 'full', lg: '50%' }}>
