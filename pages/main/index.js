@@ -1,3 +1,4 @@
+import Summary from "components/table/summeryTable";
 import Footer from "components/ui/footer"
 import Nav from "components/ui/nav"
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -14,6 +15,7 @@ const temp = () => {
     return (
         <>
             <Nav />
+            <Summary />
             <Footer />
         </>
     )

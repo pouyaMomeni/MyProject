@@ -9,7 +9,7 @@ import { MdOutlineExitToApp } from 'react-icons/md'
 import { SiPhpmyadmin } from 'react-icons/si'
 import { HiOutlineXMark } from 'react-icons/hi2'
 import { BsClipboardData, BsCreditCard } from 'react-icons/bs'
-import { AiOutlineUser, AiOutlineBarChart } from 'react-icons/ai'
+import { AiOutlineUser, AiOutlineBarChart, AiFillHome } from 'react-icons/ai'
 import Mode from "components/button/mode";
 import Locale from "components/button/language";
 import { useRouter } from "next/router"
@@ -39,6 +39,7 @@ export default function Nav() {
                         <Box color='white' cursor='pointer' ><SiPhpmyadmin size={50} /></Box>
                     </Flex>
                     <Flex display={{ base: 'none', lg: 'flex' }} justifyContent='space-evenly' >
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >Home</Text>
                         <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User information</Text>
                         <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >Cards</Text>
                         {/* <Text color='white' _hover={{ color: 'green.700' }}>logo</Text> */}
@@ -63,7 +64,8 @@ export default function Nav() {
                         <Box w='50%'><Text ml='2' fontWeight='bold' color='white' fontSize='1.2rem' cursor='pointer'>It's easy with us</Text></Box>
                         <Box w='50%' ><Text cursor='pointer' onClick={() => CloseFunc()} _hover={{ color: '#e3d0d8' }} display='flex' justifyContent='center'><HiOutlineXMark /></Text></Box>
                     </Box>
-                    <Flex flexDir='column' justifyContent='center' gap='4'>
+                    <Flex bg='#354F52' flexDir='column' justifyContent='center' gap='4'>
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><AiFillHome size={25} /><Text pl='2' cursor='pointer'>Home</Text></Box>
                         <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsClipboardData size={25} /><Text pl='2' cursor='pointer'>User information</Text></Box>
                         {/*  */}
                         <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsCreditCard size={25} /><Text pl='2' cursor='pointer'>Cards</Text></Box>
