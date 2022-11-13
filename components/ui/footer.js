@@ -9,29 +9,29 @@ export default function Footer() {
             {/* 1 */}
             <Flex height='60%' padding='10' borderBottom='1px' borderBottomColor='white'>
                 <Flex display={{ base: 'none', lg: 'flex' }} flexDir='column' justifyContent='center' alignItems='center' w='30%'>
-                    <Text cursor='pointer' fontSize='29px' color='white' fontWeight='bold'>LOGO</Text>
-                    <Text cursor='pointer' display='flex' alignItems='center' fontWeight='bold' fontSize='12px' color='white'>Pouya Momeni</Text>
+                    <Text cursor='pointer' fontSize='29px' color='white' fontWeight='bold'>{t("common:c1-r1")}</Text>
+                    <Text cursor='pointer' display='flex' alignItems='center' fontWeight='bold' fontSize='12px' color='white'>{t("common:c1-r2")}</Text>
                 </Flex>
                 <Flex justifyContent='space-evenly' alignItems='center' w={{ base: '100%', lg: '70%' }}>
                     <Box display='flex' flexDirection='column' gap='2' >
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold' >WEEBLY-THEMES</Text>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>PRE-SALE FAQS</Text>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>SUBMIT A TICKET</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold' >{t("common:c2-r1")}</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c2-r2")}</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c2-r3")}</Text>
                     </Box>
                     <Box display='flex' flexDirection='column' gap='2'>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>SERVICES</Text>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>THEME TWEAK</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c3-r1")}</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c3-r2")}</Text>
                     </Box>
                     <Box display='flex' flexDirection='column' gap='2'>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>SHOWCASE</Text>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>WIDGETKIT</Text>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>SUPPORT</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c4-r1")}</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c4-r2")}</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c4-r3")}</Text>
                     </Box>
                     <Box display='flex' flexDirection='column' gap='2'>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>ABOUT US</Text>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>CONTACT US</Text>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>AFFILIATES</Text>
-                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>RESOURCES</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c5-r1")}</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c5-r2")}</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c5-r3")}</Text>
+                        <Text _hover={{ color: '#e3d0d8' }} cursor='pointer' fontSize='12px' color='white' fontWeight='bold'>{t("common:c5-r4")}</Text>
                     </Box>
                 </Flex>
             </Flex>
@@ -46,7 +46,7 @@ export default function Footer() {
                 </Flex>
                 <Flex>
                     <Box color='white' mx='1'><BiCopyright size={20} /></Box>
-                    <Text fontSize='12px' color='white' fontWeight='bold'>Copyright.All rights reserved</Text>
+                    <Text fontSize='12px' color='white' fontWeight='bold'>{t("common:row-final")}</Text>
                 </Flex>
             </Flex>
             {/* 2 */}
