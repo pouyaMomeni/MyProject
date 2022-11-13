@@ -6,5 +6,10 @@
     "require": "This is required",
     "length": "Minimum length should be 10",
     "login": "Login",
-    "rule": "Our Terms and Privacy"
+    "rule": "Our Terms and Privacy",
+    "home-nav": "Home",
+    "user-nav": "User information",
+    "card-nav": "Cards",
+    "exit-nav": "Exit",
+    "h1-nav": "It's easy with us"
 }

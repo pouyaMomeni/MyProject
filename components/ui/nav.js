@@ -3,6 +3,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
 import { useDisclosure, useColorMode } from "@chakra-ui/react";
 import { useTranslation } from 'next-i18next';
+
 // icons
 import { FaBars } from 'react-icons/fa'
 import { MdOutlineExitToApp } from 'react-icons/md'
@@ -27,7 +28,6 @@ export default function Nav() {
     const exitFunc = async () => {
         const user = await logOut()
         if (user.status === 200) {
-            console.log('logouttt', user);
             router.push('/')
         }
     }
@@ -39,12 +39,12 @@ export default function Nav() {
                         <Box color='white' cursor='pointer' ><SiPhpmyadmin size={50} /></Box>
                     </Flex>
                     <Flex display={{ base: 'none', lg: 'flex' }} justifyContent='space-evenly' >
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >Home</Text>
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User information</Text>
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >Cards</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >{t("common:home-nav")}</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >{t("common:user-nav")}</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >{t("common:card-nav")}</Text>
                         {/* <Text color='white' _hover={{ color: 'green.700' }}>logo</Text> */}
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >List of users</Text>
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User Data with cards</Text>
+                        {/* <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >List of users</Text> */}
+                        {/* <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User Data with cards</Text> */}
                     </Flex>
                     <Flex justifyContent='center' width='10%' gap='2' alignItems='center'>
                         <Box display='flex'><Locale /></Box>
@@ -61,20 +61,20 @@ export default function Nav() {
                 <Flex pos='fixed' flexDir='column' gap='6' left={click ? '0' : '-100%'} top='0' w='50%' bg='#354F52' height='full' p='5'>
 
                     <Box display='flex' alignItems='center' fontWeight='bold' color='#CAD2C5' >
-                        <Box w='50%'><Text ml='2' fontWeight='bold' color='white' fontSize='1.2rem' cursor='pointer'>It's easy with us</Text></Box>
+                        <Box w='50%'><Text ml='2' fontWeight='bold' color='white' fontSize='1.2rem' cursor='pointer'>{t("common:h1-nav")}</Text></Box>
                         <Box w='50%' ><Text cursor='pointer' onClick={() => CloseFunc()} _hover={{ color: '#e3d0d8' }} display='flex' justifyContent='center'><HiOutlineXMark /></Text></Box>
                     </Box>
                     <Flex bg='#354F52' flexDir='column' justifyContent='center' gap='4'>
-                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><AiFillHome size={25} /><Text pl='2' cursor='pointer'>Home</Text></Box>
-                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsClipboardData size={25} /><Text pl='2' cursor='pointer'>User information</Text></Box>
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><AiFillHome size={25} /><Text pl='2' cursor='pointer'>{t("common:home-nav")}</Text></Box>
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsClipboardData size={25} /><Text pl='2' cursor='pointer'>{t("common:user-nav")}</Text></Box>
                         {/*  */}
-                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsCreditCard size={25} /><Text pl='2' cursor='pointer'>Cards</Text></Box>
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsCreditCard size={25} /><Text pl='2' cursor='pointer'>{t("common:card-nav")}</Text></Box>
                         {/*  */}
-                        <Box borderBottom='1px' pb='2.5' display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e3d0d8' }} fontWeight='bold' color='white' w='80%' ><AiOutlineUser size={25} /><Text pl='2' >List of users</Text></Box>
+                        {/* <Box borderBottom='1px' pb='2.5' display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e3d0d8' }} fontWeight='bold' color='white' w='80%' ><AiOutlineUser size={25} /><Text pl='2' >List of users</Text></Box> */}
                         {/*  */}
-                        <Box borderBottom='1px' pb='2.5' display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e3d0d8' }} fontWeight='bold' color='white' w='80%' ><AiOutlineBarChart size={25} /><Text pl='2' cursor='pointer'>User Data with cards</Text></Box>
+                        {/* <Box borderBottom='1px' pb='2.5' display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e3d0d8' }} fontWeight='bold' color='white' w='80%' ><AiOutlineBarChart size={25} /><Text pl='2' cursor='pointer'>User Data with cards</Text></Box> */}
                         {/*  */}
-                        <Box display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e63946' }} fontWeight='bold' color='white' w='80%' ><MdOutlineExitToApp size={25} /><Text onClick={() => exitFunc()} pl='2' cursor='pointer'>Exit</Text></Box>
+                        <Box display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e63946' }} fontWeight='bold' color='white' w='80%' ><MdOutlineExitToApp size={25} /><Text onClick={() => exitFunc()} pl='2' cursor='pointer'>{t("common:exit-nav")}</Text></Box>
                     </Flex>
 
                 </Flex>

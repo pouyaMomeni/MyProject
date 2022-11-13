@@ -1,7 +1,9 @@
 import { Flex, Text, Box } from "@chakra-ui/react";
 import { FaFacebookF, FaTwitter, FaWifi, FaGooglePlusG } from 'react-icons/fa'
 import { BiCopyright } from 'react-icons/bi'
+import { useTranslation } from 'next-i18next';
 export default function Footer() {
+    const { t } = useTranslation();
     return (
         <Flex flexDir='column' height='19rem' bg='#354F52'>
             {/* 1 */}
