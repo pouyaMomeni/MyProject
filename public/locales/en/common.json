@@ -26,5 +26,18 @@
     "c5-r2": "CONTACT US",
     "c5-r3": "AFFILIATES",
     "c5-r4": "RESOURCES",
-    "row-final": "Copyright.All rights reserved"
+    "row-final": "Copyright.All rights reserved",
+    "warn-sum": "You can see your brief Information about your acount",
+    "id-sum": "ID",
+    "username-sum": "Username",
+    "mobile-sum": "Mobile ",
+    "firstName-sum": "FirstName ",
+    "lastName-sum": "LastName ",
+    "email-sum": "Email ",
+    "profile-sum": "Profile",
+    "fatherName-full": "Father name ",
+    "address-full": "Address ",
+    "gender-full": "Gender ",
+    "birth-full": "Birthday ",
+    "warn-full": "You can see your Full Information about your acount"
 }
