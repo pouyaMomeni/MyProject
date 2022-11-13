@@ -47,8 +47,8 @@ export default function Login() {
                         {/* side 1 */}
                         <Box width='50%' mx='4' display={{ base: 'none', md: 'block' }}  >
                             <Box display='flex' flexDirection='column' height='100%' justifyContent='center' alignItems='center' color='white'><SiPhpmyadmin size={120} />
-                                <Text p='2' borderBottom='2px' fontWeight='bold'>Welcome to our Website</Text>
-                                <Text p='2' color='white' fontWeight='bold'>We show you Data!</Text>
+                                <Text p='2' borderBottom='2px' fontWeight='bold'>{t("common:h1-login")}</Text>
+                                <Text p='2' color='white' fontWeight='bold'>{t("common:h3-login")}</Text>
                             </Box>
                         </Box>
                         {/* side 2 */}
@@ -64,12 +64,12 @@ export default function Login() {
                                     py='5'
                                     textAlign='center'
                                     id='number'
-                                    placeholder='number'
+                                    placeholder={t("common:input-number-login")}
                                     color='white'
                                     focusBorderColor='white'
                                     {...register('number', {
-                                        required: 'This is required',
-                                        minLength: { value: 10, message: 'Minimum length should be 10' },
+                                        required: t("common:require"),
+                                        minLength: { value: 10, message: t("common:length") },
                                     })}
                                 />
                                 <FormErrorMessage>
@@ -86,11 +86,11 @@ export default function Login() {
                                     color='white'
                                     textAlign='center'
                                     id='password'
-                                    placeholder='Password'
+                                    placeholder={t("common:input-password-login")}
                                     focusBorderColor='white'
                                     {...register('password', {
-                                        required: 'This is required',
-                                        minLength: { value: 4, message: 'Minimum length should be 4' },
+                                        required: t("common:require"),
+                                        minLength: { value: 4, message: t("common:length") },
                                     })}
                                 />
                                 <FormErrorMessage>
@@ -100,13 +100,13 @@ export default function Login() {
                             {/* username inpute */}
                             <Flex justifyContent='center' >
                                 <Button mt='4' bg='white' width='12rem' rounded='full' isLoading={isSubmitting} type='submit'>
-                                    Login
+                                    {t("common:login")}
                                 </Button>
                             </Flex>
                             <Flex justifyContent='center' alignItems='center'>
-                                <Text cursor='pointer' fontSize='11px' alignSelf='center' color='white' textDecoration='underline' _hover={{ color: '#e3d0d8' }}>Our Terms and Privacy</Text>
+                                <Text cursor='pointer' fontSize='11px' alignSelf='center' color='white' textDecoration='underline' _hover={{ color: '#e3d0d8' }}>{t("common:rule")}</Text>
                             </Flex>
-                            <Flex justifyContent='center' mr={{ base: '0', md: '19rem' }} gap='5' mt='0.5rem'>
+                            <Flex justifyContent='center' gap='5' mt='0.5rem'>
                                 <Box color='white' cursor='pointer' _hover={{ color: '#e3d0d8' }}><FaLinkedin size={22} /></Box>
                                 <Box color='white' cursor='pointer' _hover={{ color: '#e3d0d8' }}><BsGithub size={22} /></Box>
                                 <Box color='white' cursor='pointer' _hover={{ color: '#e3d0d8' }}><AiTwotoneMail size={22} /></Box>

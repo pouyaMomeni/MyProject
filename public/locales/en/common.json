@@ -1,3 +1,10 @@
 {
-    "hi": "hi"
+    "h1-login": "Welcome to our Website",
+    "h3-login": "We show you Data!",
+    "input-number-login": "Phone number",
+    "input-password-login": "Password",
+    "require": "This is required",
+    "length": "Minimum length should be 10",
+    "login": "Login",
+    "rule": "Our Terms and Privacy"
 }
