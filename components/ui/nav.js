@@ -3,7 +3,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
 import { useDisclosure, useColorMode } from "@chakra-ui/react";
 import { useTranslation } from 'next-i18next';
-
+import Link from 'next/link'
 // icons
 import { FaBars } from 'react-icons/fa'
 import { MdOutlineExitToApp } from 'react-icons/md'
@@ -39,9 +39,9 @@ export default function Nav() {
                         <Box color='white' cursor='pointer' ><SiPhpmyadmin size={50} /></Box>
                     </Flex>
                     <Flex display={{ base: 'none', lg: 'flex' }} justifyContent='space-evenly' >
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >{t("common:home-nav")}</Text>
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >{t("common:user-nav")}</Text>
-                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >{t("common:card-nav")}</Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' ><Link href='/main' >{t("common:home-nav")}</Link></Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' ><Link href='/profilePage' >{t("common:user-nav")}</Link></Text>
+                        <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' ><Link href='/cardPage' >{t("common:card-nav")}</Link></Text>
                         {/* <Text color='white' _hover={{ color: 'green.700' }}>logo</Text> */}
                         {/* <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >List of users</Text> */}
                         {/* <Text cursor='pointer' fontWeight='bold' color='white' _hover={{ color: '#e3d0d8' }} px='2' >User Data with cards</Text> */}
@@ -65,10 +65,10 @@ export default function Nav() {
                         <Box w='50%' ><Text cursor='pointer' onClick={() => CloseFunc()} _hover={{ color: '#e3d0d8' }} display='flex' justifyContent='center'><HiOutlineXMark /></Text></Box>
                     </Box>
                     <Flex bg='#354F52' flexDir='column' justifyContent='center' gap='4'>
-                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><AiFillHome size={25} /><Text pl='2' cursor='pointer'>{t("common:home-nav")}</Text></Box>
-                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsClipboardData size={25} /><Text pl='2' cursor='pointer'>{t("common:user-nav")}</Text></Box>
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><AiFillHome size={25} /><Text pl='2' cursor='pointer'><Link href='/main'>{t("common:home-nav")}</Link></Text></Box>
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsClipboardData size={25} /><Text pl='2' cursor='pointer'><Link href='/profilePage'>{t("common:user-nav")}</Link></Text></Box>
                         {/*  */}
-                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsCreditCard size={25} /><Text pl='2' cursor='pointer'>{t("common:card-nav")}</Text></Box>
+                        <Box borderBottom='1px' pb='2.5' _hover={{ color: '#e3d0d8' }} display='flex' alignItems='center' fontWeight='bold' color='white' w='80%' ><BsCreditCard size={25} /><Text pl='2' cursor='pointer'><Link href='/cardPage'>{t("common:card-nav")}</Link></Text></Box>
                         {/*  */}
                         {/* <Box borderBottom='1px' pb='2.5' display='flex' alignItems='center' cursor='pointer' _hover={{ color: '#e3d0d8' }} fontWeight='bold' color='white' w='80%' ><AiOutlineUser size={25} /><Text pl='2' >List of users</Text></Box> */}
                         {/*  */}
