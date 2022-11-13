@@ -39,5 +39,10 @@
     "address-full": "Address ",
     "gender-full": "Gender ",
     "birth-full": "Birthday ",
-    "warn-full": "You can see your Full Information about your acount"
+    "warn-full": "You can see your Full Information about your acount",
+    "username-card": "USERNAME",
+    "name-card": "CARDNAME",
+    "number-card": "CARDNUMBER",
+    "shaba-card": "SHABANUMBER",
+    "card": "Cards"
 }

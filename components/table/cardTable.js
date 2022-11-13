@@ -14,7 +14,7 @@ import { useCard } from 'hook';
 import { RiProfileLine } from 'react-icons/ri'
 export default function CardTable() {
     const { data } = useCard()
-
+    const { t } = useTranslation();
     return (
 
         <Flex justifyContent='center' padding='5' my='4rem'>
@@ -23,10 +23,10 @@ export default function CardTable() {
                     <Thead>
                         <Tr>
                             <Th>--</Th>
-                            <Th>Username</Th>
-                            <Th>CardName</Th>
-                            <Th >CardNumber</Th>
-                            <Th >ShabaNumber</Th>
+                            <Th>{t("common:username-card")}</Th>
+                            <Th>{t("common:name-card")}</Th>
+                            <Th >{t("common:number-card")}</Th>
+                            <Th >{t("common:shaba-card")}</Th>
                         </Tr>
                     </Thead>
                     <Tbody>
@@ -42,7 +42,7 @@ export default function CardTable() {
                             )
                         })}
                     </Tbody>
-                    <TableCaption  >Cards</TableCaption>
+                    <TableCaption>{t("common:card")}</TableCaption>
 
                 </Table>
             </TableContainer>
